@@ -6,7 +6,7 @@ from sqlalchemy import false
 
 
 def canUnlockAll(boxes):
-    if len(boxes) == 1 or len(boxes) == 0:
+    if len(boxes) <= 1:
         return True
     isOpenList = [False] * (len(boxes) - 1)
     isOpenList[0] = True
