@@ -13,3 +13,7 @@ print(canUnlockAll(boxes))
 
 boxes = [[]]
 print(canUnlockAll(boxes))
+
+
+boxes = [[0], [1], [2]]
+print(canUnlockAll(boxes))
