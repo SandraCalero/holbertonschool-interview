@@ -12,7 +12,7 @@ def canUnlockAll(boxes):
         check = all(box == index_list[0] for box in index_list)
         if check:
             return True
-        if box == [] and check == False:
+        if box == [] and check is False:
             return False
         for key in box:
             if key in index_list and index_list[key] != 'Open':
