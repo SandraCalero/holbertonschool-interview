@@ -3,12 +3,11 @@
 
 
 def canUnlockAll(boxes):
-    isOpenList = [False] * (len(boxes) - 1)
-    isOpenList[0] = True
+    isOpen = [False] * len(boxes)
+    isOpen[0] = [True]
     keyList = boxes[0]
     for key in keyList:
-        if (key < len(boxes)) and (isOpenList[key] is False):
-            isOpenList[key] = True
+        if ((key < len(boxes)) and (isOpen[key] is False)):
+            isOpen[key] = True
             keyList.extend(boxes[key])
-
-    return all(isOpenList)
+    return all(isOpen)
