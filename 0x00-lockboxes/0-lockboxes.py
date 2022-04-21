@@ -8,7 +8,7 @@ from sqlalchemy import false
 def canUnlockAll(boxes):
     if len(boxes) == 1 or len(boxes) == 0:
         return True
-    if boxes[0] == [0]:
+    if boxes[0] == [0] or boxes[0] == []:
         return False
     index_list = [False for box in boxes]
     index_list[0] = True
