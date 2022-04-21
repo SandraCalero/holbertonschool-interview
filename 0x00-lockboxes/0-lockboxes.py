@@ -15,6 +15,5 @@ def canUnlockAll(boxes):
         if (key < len(isOpenList)) and (isOpenList[key] is False):
             isOpenList[key] = True
             keyList.extend(boxes[key])
-    print(keyList)
 
     return all(isOpenList)
