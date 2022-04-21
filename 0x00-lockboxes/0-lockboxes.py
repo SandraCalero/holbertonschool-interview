@@ -3,18 +3,17 @@
 
 
 def canUnlockAll(boxes):
-    check = False
     if len(boxes) == 0:
         return True
-    index_list = [boxes.index(box) for box in boxes]
-    index_list[0] = 'Open'
+    index_list = [False for box in boxes]
+    index_list[0] = True
+    isOpen = False
     for box in boxes:
-        check = all(box == index_list[0] for box in index_list)
-        if check:
+        isOpen = all(index_list)
+        if isOpen:
             return True
-        if box == [] and check is False:
+        if box == [] and isOpen is False:
             return False
         for key in box:
-            if key in index_list and index_list[key] != 'Open':
-                index_key = index_list.index(key)
-                index_list[index_key] = 'Open'
+            if index_list[key] is not True:
+                index_list[key] = True
