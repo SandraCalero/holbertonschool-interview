@@ -2,6 +2,9 @@
 """Method that determines if all the boxes can be opened"""
 
 
+from sqlalchemy import false
+
+
 def canUnlockAll(boxes):
     if len(boxes) == 0:
         return True
@@ -14,6 +17,9 @@ def canUnlockAll(boxes):
             return True
         if box == [] and isOpen is False:
             return False
+        if boxes.index(box) == len(index_list) - 1 and isOpen is False:
+            return False
         for key in box:
-            if index_list[key] is not True:
-                index_list[key] = True
+            if key < len(index_list):
+                if index_list[key] is False:
+                    index_list[key] = True
